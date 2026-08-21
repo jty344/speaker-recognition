@@ -1,0 +1,14 @@
+{
+  "model_id": "Wespeaker/wespeaker-cnceleb-resnet34-LM",
+  "source": "https://huggingface.co/Wespeaker/wespeaker-cnceleb-resnet34-LM",
+  "files": {
+    "cnceleb_resnet34_LM.onnx": {
+      "bytes": 26530309,
+      "sha256": "e7584940aeac8d5512d875e58ce6c09ba4ddad65d8128e1dac0d93aadd087ebb"
+    },
+    "config.yaml": {
+      "bytes": 1716,
+      "sha256": "deef9f002d895dbdb3748768acd4d588459570bd85e9d3f235cfe5631355578e"
+    }
+  }
+}

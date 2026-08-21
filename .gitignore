@@ -1,0 +1,12 @@
+.cache/
+.runtime/
+.tmp/
+.tools/
+artifacts/registry/*.json
+artifacts/registry/*.npz
+artifacts/embeddings/
+data/private/
+data/test_assets/generated/
+__pycache__/
+*.py[cod]
+.pytest_cache/

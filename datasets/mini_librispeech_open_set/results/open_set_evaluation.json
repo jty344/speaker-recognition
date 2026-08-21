@@ -1,0 +1,1338 @@
+{
+  "evaluation_version": 2,
+  "manifest": "/mnt/code/test_env1/datasets/mini_librispeech_open_set/protocol/open_set_manifest.json",
+  "model": {
+    "path": "/mnt/code/test_env1/models/wespeaker-cnceleb-resnet34-lm/cnceleb_resnet34_LM.onnx",
+    "sha256": "e7584940aeac8d5512d875e58ce6c09ba4ddad65d8128e1dac0d93aadd087ebb",
+    "preprocessing_id": "gstreamer-f32le-mono16k|rms-trim--40db|segments-3s-min2s|kaldi-fbank80-25ms-10ms-hamming-dither0-cmn",
+    "runtime": {
+      "backend": "onnxruntime",
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "threads": 1,
+      "model": "/mnt/code/test_env1/models/wespeaker-cnceleb-resnet34-lm/cnceleb_resnet34_LM.onnx"
+    }
+  },
+  "threshold": 0.5,
+  "top_k": 3,
+  "metrics": {
+    "known_query_count": 24,
+    "known_correct": 24,
+    "known_open_set_accuracy": 1.0,
+    "known_macro_accuracy": 1.0,
+    "known_closed_set_top1_accuracy": 1.0,
+    "known_acceptance_rate": 1.0,
+    "known_false_reject_count": 0,
+    "known_false_reject_rate": 0.0,
+    "known_misidentification_count": 0,
+    "known_misidentification_rate": 0.0,
+    "known_error_count": 0,
+    "known_error_rate": 0.0,
+    "unknown_query_count": 24,
+    "unknown_correct": 10,
+    "unknown_recall": 0.4166666666666667,
+    "false_accept_rate": 0.5833333333333334,
+    "unknown_error_count": 0,
+    "unknown_error_rate": 0.0,
+    "overall_query_count": 48,
+    "overall_correct": 34,
+    "overall_open_set_accuracy": 0.7083333333333334,
+    "balanced_accuracy": 0.7083333333333334,
+    "query_error_count": 0,
+    "elapsed_seconds": 19.613337212009355,
+    "seconds_per_query_including_enrollment": 0.40861119191686157
+  },
+  "per_known_speaker": {
+    "speaker_1272": {
+      "total": 3,
+      "correct": 3,
+      "accuracy": 1.0
+    },
+    "speaker_2035": {
+      "total": 3,
+      "correct": 3,
+      "accuracy": 1.0
+    },
+    "speaker_5338": {
+      "total": 3,
+      "correct": 3,
+      "accuracy": 1.0
+    },
+    "speaker_1462": {
+      "total": 3,
+      "correct": 3,
+      "accuracy": 1.0
+    },
+    "speaker_251": {
+      "total": 3,
+      "correct": 3,
+      "accuracy": 1.0
+    },
+    "speaker_2803": {
+      "total": 3,
+      "correct": 3,
+      "accuracy": 1.0
+    },
+    "speaker_7850": {
+      "total": 3,
+      "correct": 3,
+      "accuracy": 1.0
+    },
+    "speaker_5895": {
+      "total": 3,
+      "correct": 3,
+      "accuracy": 1.0
+    }
+  },
+  "predictions": [
+    {
+      "audio": "mp3/queries/known/speaker_1272/1272-141231-0017.mp3",
+      "utterance_id": "1272-141231-0017",
+      "source_speaker_id": "1272",
+      "role": "known",
+      "expected": "speaker_1272",
+      "predicted": "speaker_1272",
+      "correct": true,
+      "score": 0.6690986156463623,
+      "top1_speaker": "speaker_1272",
+      "top1_score": 0.6690986156463623,
+      "matches": [
+        {
+          "speaker": "speaker_1272",
+          "score": 0.6690986156463623
+        },
+        {
+          "speaker": "speaker_251",
+          "score": 0.47230619192123413
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.32713931798934937
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_1272/1272-141231-0008.mp3",
+      "utterance_id": "1272-141231-0008",
+      "source_speaker_id": "1272",
+      "role": "known",
+      "expected": "speaker_1272",
+      "predicted": "speaker_1272",
+      "correct": true,
+      "score": 0.7735977172851562,
+      "top1_speaker": "speaker_1272",
+      "top1_score": 0.7735977172851562,
+      "matches": [
+        {
+          "speaker": "speaker_1272",
+          "score": 0.7735977172851562
+        },
+        {
+          "speaker": "speaker_251",
+          "score": 0.4633934497833252
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.34314417839050293
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_1272/1272-141231-0005.mp3",
+      "utterance_id": "1272-141231-0005",
+      "source_speaker_id": "1272",
+      "role": "known",
+      "expected": "speaker_1272",
+      "predicted": "speaker_1272",
+      "correct": true,
+      "score": 0.7835835814476013,
+      "top1_speaker": "speaker_1272",
+      "top1_score": 0.7835835814476013,
+      "matches": [
+        {
+          "speaker": "speaker_1272",
+          "score": 0.7835835814476013
+        },
+        {
+          "speaker": "speaker_251",
+          "score": 0.5016465783119202
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.3149252235889435
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_2035/2035-152373-0017.mp3",
+      "utterance_id": "2035-152373-0017",
+      "source_speaker_id": "2035",
+      "role": "known",
+      "expected": "speaker_2035",
+      "predicted": "speaker_2035",
+      "correct": true,
+      "score": 0.8296414613723755,
+      "top1_speaker": "speaker_2035",
+      "top1_score": 0.8296414613723755,
+      "matches": [
+        {
+          "speaker": "speaker_2035",
+          "score": 0.8296414613723755
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.44123438000679016
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.3230593204498291
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_2035/2035-152373-0007.mp3",
+      "utterance_id": "2035-152373-0007",
+      "source_speaker_id": "2035",
+      "role": "known",
+      "expected": "speaker_2035",
+      "predicted": "speaker_2035",
+      "correct": true,
+      "score": 0.8495818972587585,
+      "top1_speaker": "speaker_2035",
+      "top1_score": 0.8495818972587585,
+      "matches": [
+        {
+          "speaker": "speaker_2035",
+          "score": 0.8495818972587585
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.47683459520339966
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.39158767461776733
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_2035/2035-152373-0005.mp3",
+      "utterance_id": "2035-152373-0005",
+      "source_speaker_id": "2035",
+      "role": "known",
+      "expected": "speaker_2035",
+      "predicted": "speaker_2035",
+      "correct": true,
+      "score": 0.8947820663452148,
+      "top1_speaker": "speaker_2035",
+      "top1_score": 0.8947820663452148,
+      "matches": [
+        {
+          "speaker": "speaker_2035",
+          "score": 0.8947820663452148
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.5156746506690979
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.36483895778656006
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_5338/5338-284437-0030.mp3",
+      "utterance_id": "5338-284437-0030",
+      "source_speaker_id": "5338",
+      "role": "known",
+      "expected": "speaker_5338",
+      "predicted": "speaker_5338",
+      "correct": true,
+      "score": 0.629430890083313,
+      "top1_speaker": "speaker_5338",
+      "top1_score": 0.629430890083313,
+      "matches": [
+        {
+          "speaker": "speaker_5338",
+          "score": 0.629430890083313
+        },
+        {
+          "speaker": "speaker_1462",
+          "score": 0.5659130811691284
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.5563188195228577
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_5338/5338-284437-0016.mp3",
+      "utterance_id": "5338-284437-0016",
+      "source_speaker_id": "5338",
+      "role": "known",
+      "expected": "speaker_5338",
+      "predicted": "speaker_5338",
+      "correct": true,
+      "score": 0.5831860303878784,
+      "top1_speaker": "speaker_5338",
+      "top1_score": 0.5831860303878784,
+      "matches": [
+        {
+          "speaker": "speaker_5338",
+          "score": 0.5831860303878784
+        },
+        {
+          "speaker": "speaker_1462",
+          "score": 0.5186467170715332
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.4666908085346222
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_5338/5338-284437-0013.mp3",
+      "utterance_id": "5338-284437-0013",
+      "source_speaker_id": "5338",
+      "role": "known",
+      "expected": "speaker_5338",
+      "predicted": "speaker_5338",
+      "correct": true,
+      "score": 0.7217341065406799,
+      "top1_speaker": "speaker_5338",
+      "top1_score": 0.7217341065406799,
+      "matches": [
+        {
+          "speaker": "speaker_5338",
+          "score": 0.7217341065406799
+        },
+        {
+          "speaker": "speaker_1462",
+          "score": 0.6152832508087158
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.6144667863845825
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_1462/1462-170145-0017.mp3",
+      "utterance_id": "1462-170145-0017",
+      "source_speaker_id": "1462",
+      "role": "known",
+      "expected": "speaker_1462",
+      "predicted": "speaker_1462",
+      "correct": true,
+      "score": 0.7998908758163452,
+      "top1_speaker": "speaker_1462",
+      "top1_score": 0.7998908758163452,
+      "matches": [
+        {
+          "speaker": "speaker_1462",
+          "score": 0.7998908758163452
+        },
+        {
+          "speaker": "speaker_7850",
+          "score": 0.3628784120082855
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.35095545649528503
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_1462/1462-170145-0005.mp3",
+      "utterance_id": "1462-170145-0005",
+      "source_speaker_id": "1462",
+      "role": "known",
+      "expected": "speaker_1462",
+      "predicted": "speaker_1462",
+      "correct": true,
+      "score": 0.8002912998199463,
+      "top1_speaker": "speaker_1462",
+      "top1_score": 0.8002912998199463,
+      "matches": [
+        {
+          "speaker": "speaker_1462",
+          "score": 0.8002912998199463
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.4666954576969147
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.45583730936050415
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_1462/1462-170145-0006.mp3",
+      "utterance_id": "1462-170145-0006",
+      "source_speaker_id": "1462",
+      "role": "known",
+      "expected": "speaker_1462",
+      "predicted": "speaker_1462",
+      "correct": true,
+      "score": 0.7682769298553467,
+      "top1_speaker": "speaker_1462",
+      "top1_score": 0.7682769298553467,
+      "matches": [
+        {
+          "speaker": "speaker_1462",
+          "score": 0.7682769298553467
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.4542529284954071
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.37671181559562683
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_251/251-118436-0004.mp3",
+      "utterance_id": "251-118436-0004",
+      "source_speaker_id": "251",
+      "role": "known",
+      "expected": "speaker_251",
+      "predicted": "speaker_251",
+      "correct": true,
+      "score": 0.615548312664032,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.615548312664032,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.615548312664032
+        },
+        {
+          "speaker": "speaker_1272",
+          "score": 0.2699512541294098
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.21556292474269867
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_251/251-118436-0012.mp3",
+      "utterance_id": "251-118436-0012",
+      "source_speaker_id": "251",
+      "role": "known",
+      "expected": "speaker_251",
+      "predicted": "speaker_251",
+      "correct": true,
+      "score": 0.7189125418663025,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.7189125418663025,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.7189125418663025
+        },
+        {
+          "speaker": "speaker_1272",
+          "score": 0.44079867005348206
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.3295903205871582
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_251/251-118436-0021.mp3",
+      "utterance_id": "251-118436-0021",
+      "source_speaker_id": "251",
+      "role": "known",
+      "expected": "speaker_251",
+      "predicted": "speaker_251",
+      "correct": true,
+      "score": 0.7143937349319458,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.7143937349319458,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.7143937349319458
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.36701586842536926
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.33869484066963196
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_2803/2803-161169-0010.mp3",
+      "utterance_id": "2803-161169-0010",
+      "source_speaker_id": "2803",
+      "role": "known",
+      "expected": "speaker_2803",
+      "predicted": "speaker_2803",
+      "correct": true,
+      "score": 0.8290051221847534,
+      "top1_speaker": "speaker_2803",
+      "top1_score": 0.8290051221847534,
+      "matches": [
+        {
+          "speaker": "speaker_2803",
+          "score": 0.8290051221847534
+        },
+        {
+          "speaker": "speaker_251",
+          "score": 0.38461852073669434
+        },
+        {
+          "speaker": "speaker_1272",
+          "score": 0.2835598886013031
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_2803/2803-161169-0005.mp3",
+      "utterance_id": "2803-161169-0005",
+      "source_speaker_id": "2803",
+      "role": "known",
+      "expected": "speaker_2803",
+      "predicted": "speaker_2803",
+      "correct": true,
+      "score": 0.8744408488273621,
+      "top1_speaker": "speaker_2803",
+      "top1_score": 0.8744408488273621,
+      "matches": [
+        {
+          "speaker": "speaker_2803",
+          "score": 0.8744408488273621
+        },
+        {
+          "speaker": "speaker_251",
+          "score": 0.37561899423599243
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.3142215311527252
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_2803/2803-161169-0008.mp3",
+      "utterance_id": "2803-161169-0008",
+      "source_speaker_id": "2803",
+      "role": "known",
+      "expected": "speaker_2803",
+      "predicted": "speaker_2803",
+      "correct": true,
+      "score": 0.8427929282188416,
+      "top1_speaker": "speaker_2803",
+      "top1_score": 0.8427929282188416,
+      "matches": [
+        {
+          "speaker": "speaker_2803",
+          "score": 0.8427929282188416
+        },
+        {
+          "speaker": "speaker_251",
+          "score": 0.41282373666763306
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.31251487135887146
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_7850/7850-281318-0008.mp3",
+      "utterance_id": "7850-281318-0008",
+      "source_speaker_id": "7850",
+      "role": "known",
+      "expected": "speaker_7850",
+      "predicted": "speaker_7850",
+      "correct": true,
+      "score": 0.6767032742500305,
+      "top1_speaker": "speaker_7850",
+      "top1_score": 0.6767032742500305,
+      "matches": [
+        {
+          "speaker": "speaker_7850",
+          "score": 0.6767032742500305
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.6115713715553284
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.6010690927505493
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_7850/7850-281318-0003.mp3",
+      "utterance_id": "7850-281318-0003",
+      "source_speaker_id": "7850",
+      "role": "known",
+      "expected": "speaker_7850",
+      "predicted": "speaker_7850",
+      "correct": true,
+      "score": 0.5084032416343689,
+      "top1_speaker": "speaker_7850",
+      "top1_score": 0.5084032416343689,
+      "matches": [
+        {
+          "speaker": "speaker_7850",
+          "score": 0.5084032416343689
+        },
+        {
+          "speaker": "speaker_1462",
+          "score": 0.37442517280578613
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.3633040189743042
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_7850/7850-281318-0004.mp3",
+      "utterance_id": "7850-281318-0004",
+      "source_speaker_id": "7850",
+      "role": "known",
+      "expected": "speaker_7850",
+      "predicted": "speaker_7850",
+      "correct": true,
+      "score": 0.6840205192565918,
+      "top1_speaker": "speaker_7850",
+      "top1_score": 0.6840205192565918,
+      "matches": [
+        {
+          "speaker": "speaker_7850",
+          "score": 0.6840205192565918
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.5932676196098328
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.5754944086074829
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_5895/5895-34622-0019.mp3",
+      "utterance_id": "5895-34622-0019",
+      "source_speaker_id": "5895",
+      "role": "known",
+      "expected": "speaker_5895",
+      "predicted": "speaker_5895",
+      "correct": true,
+      "score": 0.8461121320724487,
+      "top1_speaker": "speaker_5895",
+      "top1_score": 0.8461121320724487,
+      "matches": [
+        {
+          "speaker": "speaker_5895",
+          "score": 0.8461121320724487
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.5810103416442871
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.5733559727668762
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_5895/5895-34622-0006.mp3",
+      "utterance_id": "5895-34622-0006",
+      "source_speaker_id": "5895",
+      "role": "known",
+      "expected": "speaker_5895",
+      "predicted": "speaker_5895",
+      "correct": true,
+      "score": 0.7912241816520691,
+      "top1_speaker": "speaker_5895",
+      "top1_score": 0.7912241816520691,
+      "matches": [
+        {
+          "speaker": "speaker_5895",
+          "score": 0.7912241816520691
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.5468605756759644
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.5141959190368652
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/known/speaker_5895/5895-34622-0012.mp3",
+      "utterance_id": "5895-34622-0012",
+      "source_speaker_id": "5895",
+      "role": "known",
+      "expected": "speaker_5895",
+      "predicted": "speaker_5895",
+      "correct": true,
+      "score": 0.8030460476875305,
+      "top1_speaker": "speaker_5895",
+      "top1_score": 0.8030460476875305,
+      "matches": [
+        {
+          "speaker": "speaker_5895",
+          "score": 0.8030460476875305
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.5211296677589417
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.4705221951007843
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_3752/3752-4944-0027.mp3",
+      "utterance_id": "3752-4944-0027",
+      "source_speaker_id": "3752",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_251",
+      "correct": false,
+      "score": 0.6488707661628723,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.6488707661628723,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.6488707661628723
+        },
+        {
+          "speaker": "speaker_1272",
+          "score": 0.5244501233100891
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.46755895018577576
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_3752/3752-4944-0059.mp3",
+      "utterance_id": "3752-4944-0059",
+      "source_speaker_id": "3752",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_251",
+      "correct": false,
+      "score": 0.543341338634491,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.543341338634491,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.543341338634491
+        },
+        {
+          "speaker": "speaker_1272",
+          "score": 0.4947979748249054
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.3936361074447632
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_3752/3752-4944-0056.mp3",
+      "utterance_id": "3752-4944-0056",
+      "source_speaker_id": "3752",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_251",
+      "correct": false,
+      "score": 0.6602339744567871,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.6602339744567871,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.6602339744567871
+        },
+        {
+          "speaker": "speaker_1272",
+          "score": 0.5483139157295227
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.5042992234230042
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_174/174-168635-0002.mp3",
+      "utterance_id": "174-168635-0002",
+      "source_speaker_id": "174",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "correct": true,
+      "score": 0.4786432683467865,
+      "top1_speaker": "speaker_2803",
+      "top1_score": 0.4786432683467865,
+      "matches": [
+        {
+          "speaker": "speaker_2803",
+          "score": 0.4786432683467865
+        },
+        {
+          "speaker": "speaker_7850",
+          "score": 0.37617024779319763
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.37194180488586426
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_174/174-168635-0011.mp3",
+      "utterance_id": "174-168635-0011",
+      "source_speaker_id": "174",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "correct": true,
+      "score": 0.4037376940250397,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.4037376940250397,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.4037376940250397
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.3717668056488037
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.27994731068611145
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_174/174-168635-0013.mp3",
+      "utterance_id": "174-168635-0013",
+      "source_speaker_id": "174",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "correct": true,
+      "score": 0.44616782665252686,
+      "top1_speaker": "speaker_7850",
+      "top1_score": 0.44616782665252686,
+      "matches": [
+        {
+          "speaker": "speaker_7850",
+          "score": 0.44616782665252686
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.39817339181900024
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.33320149779319763
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_6295/6295-244435-0030.mp3",
+      "utterance_id": "6295-244435-0030",
+      "source_speaker_id": "6295",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_251",
+      "correct": false,
+      "score": 0.6439024806022644,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.6439024806022644,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.6439024806022644
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.6018193960189819
+        },
+        {
+          "speaker": "speaker_1272",
+          "score": 0.43810969591140747
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_6295/6295-244435-0040.mp3",
+      "utterance_id": "6295-244435-0040",
+      "source_speaker_id": "6295",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "correct": true,
+      "score": 0.49066653847694397,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.49066653847694397,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.49066653847694397
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.426488995552063
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.3925620913505554
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_6295/6295-244435-0033.mp3",
+      "utterance_id": "6295-244435-0033",
+      "source_speaker_id": "6295",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_251",
+      "correct": false,
+      "score": 0.6414284110069275,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.6414284110069275,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.6414284110069275
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.5736223459243774
+        },
+        {
+          "speaker": "speaker_1272",
+          "score": 0.4663921296596527
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_5694/5694-64038-0001.mp3",
+      "utterance_id": "5694-64038-0001",
+      "source_speaker_id": "5694",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_251",
+      "correct": false,
+      "score": 0.6037864089012146,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.6037864089012146,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.6037864089012146
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.44038501381874084
+        },
+        {
+          "speaker": "speaker_1272",
+          "score": 0.39838293194770813
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_5694/5694-64038-0010.mp3",
+      "utterance_id": "5694-64038-0010",
+      "source_speaker_id": "5694",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_251",
+      "correct": false,
+      "score": 0.5697762370109558,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.5697762370109558,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.5697762370109558
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.43391966819763184
+        },
+        {
+          "speaker": "speaker_1272",
+          "score": 0.4266357421875
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_5694/5694-64038-0019.mp3",
+      "utterance_id": "5694-64038-0019",
+      "source_speaker_id": "5694",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_2803",
+      "correct": false,
+      "score": 0.5093038082122803,
+      "top1_speaker": "speaker_2803",
+      "top1_score": 0.5093038082122803,
+      "matches": [
+        {
+          "speaker": "speaker_2803",
+          "score": 0.5093038082122803
+        },
+        {
+          "speaker": "speaker_251",
+          "score": 0.5007237792015076
+        },
+        {
+          "speaker": "speaker_1272",
+          "score": 0.4229218661785126
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_2412/2412-153948-0011.mp3",
+      "utterance_id": "2412-153948-0011",
+      "source_speaker_id": "2412",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_2035",
+      "correct": false,
+      "score": 0.6025263667106628,
+      "top1_speaker": "speaker_2035",
+      "top1_score": 0.6025263667106628,
+      "matches": [
+        {
+          "speaker": "speaker_2035",
+          "score": 0.6025263667106628
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.5837474465370178
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.4202284514904022
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_2412/2412-153948-0002.mp3",
+      "utterance_id": "2412-153948-0002",
+      "source_speaker_id": "2412",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "correct": true,
+      "score": 0.4544279873371124,
+      "top1_speaker": "speaker_5895",
+      "top1_score": 0.4544279873371124,
+      "matches": [
+        {
+          "speaker": "speaker_5895",
+          "score": 0.4544279873371124
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.40173161029815674
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.35890889167785645
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_2412/2412-153948-0001.mp3",
+      "utterance_id": "2412-153948-0001",
+      "source_speaker_id": "2412",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_2035",
+      "correct": false,
+      "score": 0.5064906477928162,
+      "top1_speaker": "speaker_2035",
+      "top1_score": 0.5064906477928162,
+      "matches": [
+        {
+          "speaker": "speaker_2035",
+          "score": 0.5064906477928162
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.5013298392295837
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.41317448019981384
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_6319/6319-57405-0001.mp3",
+      "utterance_id": "6319-57405-0001",
+      "source_speaker_id": "6319",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_7850",
+      "correct": false,
+      "score": 0.597122848033905,
+      "top1_speaker": "speaker_7850",
+      "top1_score": 0.597122848033905,
+      "matches": [
+        {
+          "speaker": "speaker_7850",
+          "score": 0.597122848033905
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.5543425679206848
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.5395779609680176
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_6319/6319-57405-0007.mp3",
+      "utterance_id": "6319-57405-0007",
+      "source_speaker_id": "6319",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_7850",
+      "correct": false,
+      "score": 0.5043753981590271,
+      "top1_speaker": "speaker_7850",
+      "top1_score": 0.5043753981590271,
+      "matches": [
+        {
+          "speaker": "speaker_7850",
+          "score": 0.5043753981590271
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.48024001717567444
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.46574515104293823
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_6319/6319-57405-0004.mp3",
+      "utterance_id": "6319-57405-0004",
+      "source_speaker_id": "6319",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "correct": true,
+      "score": 0.48722487688064575,
+      "top1_speaker": "speaker_5895",
+      "top1_score": 0.48722487688064575,
+      "matches": [
+        {
+          "speaker": "speaker_5895",
+          "score": 0.48722487688064575
+        },
+        {
+          "speaker": "speaker_7850",
+          "score": 0.46832090616226196
+        },
+        {
+          "speaker": "speaker_1462",
+          "score": 0.42471060156822205
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_6241/6241-61943-0010.mp3",
+      "utterance_id": "6241-61943-0010",
+      "source_speaker_id": "6241",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "correct": true,
+      "score": 0.4147755205631256,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.4147755205631256,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.4147755205631256
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.40764448046684265
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.3607441484928131
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_6241/6241-61943-0019.mp3",
+      "utterance_id": "6241-61943-0019",
+      "source_speaker_id": "6241",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_2803",
+      "correct": false,
+      "score": 0.5339306592941284,
+      "top1_speaker": "speaker_2803",
+      "top1_score": 0.5339306592941284,
+      "matches": [
+        {
+          "speaker": "speaker_2803",
+          "score": 0.5339306592941284
+        },
+        {
+          "speaker": "speaker_251",
+          "score": 0.4367339015007019
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.4302688539028168
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_6241/6241-61943-0025.mp3",
+      "utterance_id": "6241-61943-0025",
+      "source_speaker_id": "6241",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "speaker_2803",
+      "correct": false,
+      "score": 0.5421537160873413,
+      "top1_speaker": "speaker_2803",
+      "top1_score": 0.5421537160873413,
+      "matches": [
+        {
+          "speaker": "speaker_2803",
+          "score": 0.5421537160873413
+        },
+        {
+          "speaker": "speaker_2035",
+          "score": 0.4752747714519501
+        },
+        {
+          "speaker": "speaker_5895",
+          "score": 0.44097262620925903
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_777/777-126732-0061.mp3",
+      "utterance_id": "777-126732-0061",
+      "source_speaker_id": "777",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "correct": true,
+      "score": 0.36646050214767456,
+      "top1_speaker": "speaker_2803",
+      "top1_score": 0.36646050214767456,
+      "matches": [
+        {
+          "speaker": "speaker_2803",
+          "score": 0.36646050214767456
+        },
+        {
+          "speaker": "speaker_251",
+          "score": 0.3280392587184906
+        },
+        {
+          "speaker": "speaker_7850",
+          "score": 0.24777744710445404
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_777/777-126732-0003.mp3",
+      "utterance_id": "777-126732-0003",
+      "source_speaker_id": "777",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "correct": true,
+      "score": 0.363790899515152,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.363790899515152,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.363790899515152
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.34363019466400146
+        },
+        {
+          "speaker": "speaker_7850",
+          "score": 0.2931346893310547
+        }
+      ]
+    },
+    {
+      "audio": "mp3/queries/unknown/speaker_777/777-126732-0055.mp3",
+      "utterance_id": "777-126732-0055",
+      "source_speaker_id": "777",
+      "role": "unknown",
+      "expected": "UNKNOWN",
+      "predicted": "UNKNOWN",
+      "correct": true,
+      "score": 0.45524731278419495,
+      "top1_speaker": "speaker_251",
+      "top1_score": 0.45524731278419495,
+      "matches": [
+        {
+          "speaker": "speaker_251",
+          "score": 0.45524731278419495
+        },
+        {
+          "speaker": "speaker_2803",
+          "score": 0.3979516625404358
+        },
+        {
+          "speaker": "speaker_5338",
+          "score": 0.30759739875793457
+        }
+      ]
+    }
+  ]
+}
