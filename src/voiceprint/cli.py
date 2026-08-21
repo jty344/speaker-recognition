@@ -199,7 +199,7 @@ def positive_integer(value: str) -> int:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="voiceprint",
-        description="单说话人 MP3 开放集声纹识别 Demo",
+        description="单说话人音频开放集声纹识别 Demo",
     )
     parser.add_argument("--version", action="version", version=__version__)
     parser.add_argument("--model", type=Path, default=MODEL_PATH)

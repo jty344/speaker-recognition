@@ -1,13 +1,14 @@
 # CPU 开放集声纹识别 Demo
 
-目标：对单说话人 MP3 注册声纹，之后输入新的 MP3，返回已注册人员姓名或 `UNKNOWN`。
+目标：对单说话人音频注册声纹，之后输入新的音频，返回已注册人员姓名或 `UNKNOWN`。
 
 处理链：
 
 ```text
-MP3 → GStreamer → mono/16kHz/float32 PCM
-    → 80维 Kaldi FBank → WeSpeaker ResNet34-LM ONNX
-    → 256维 L2 embedding → cosine → 姓名或 UNKNOWN
+MP3/WAV/FLAC/AAC → 按文件后缀选择 GStreamer parser
+                 → mono/16kHz/float32 PCM
+                 → 80维 Kaldi FBank → WeSpeaker ResNet34-LM ONNX
+                 → 256维 L2 embedding → cosine → 姓名或 UNKNOWN
 ```
 
 ## 工作区隔离
@@ -21,13 +22,13 @@ MP3 → GStreamer → mono/16kHz/float32 PCM
 requirements/             按用途分类的依赖与完整锁定版本
 models/                   ONNX、配置、来源和 SHA-256
 src/voiceprint/            业务代码
-data/private/              用户自己的 MP3
+data/private/              用户自己的音频
 data/test_assets/          可重复生成的测试音频
 datasets/                  独立的公开评测集、真值协议与结果
 artifacts/registry/        NPZ 声纹中心与 JSON 元数据
 ```
 
-不使用 `apt`、`pip --user` 或用户级模型缓存。系统现有 GStreamer 只负责解码，不新增系统文件。
+不使用 `apt`、`pip --user` 或用户级模型缓存。系统现有 GStreamer 负责音频管线；AAC 解码所需的 FAAD 插件和动态库由初始化脚本校验后解压到 `.runtime/gstreamer/`，不新增或修改系统文件。
 
 ## 初始化
 
@@ -36,11 +37,17 @@ cd /mnt/code/test_env1
 ./scripts/bootstrap.sh
 ```
 
-脚本会创建 `.runtime/venvs/voiceprint`，安装 CPU 版 PyTorch、TorchAudio、ONNX Runtime，并下载经过 SHA-256 校验的模型。
+脚本会创建 `.runtime/venvs/voiceprint`，安装 CPU 版 PyTorch、TorchAudio、ONNX Runtime，准备工作区内的 GStreamer FAAD 插件，并下载经过 SHA-256 校验的模型。
+
+AAC runtime 当前固定为 Ubuntu 22.04 x86_64 软件包。FAAD2 及加载它的 GStreamer 插件按 GPL 许可提供；脚本仅在本机下载到已忽略的 `.runtime/`。若以后要随产品重新分发这些二进制，需要单独完成许可证合规审查。
+
+## 支持的音频格式
+
+输入格式根据文件名的最后一个后缀判断，后缀大小写不敏感：`.mp3`、`.wav`、`.flac` 和 `.aac`。`.aac` 仅表示裸 ADTS AAC；MP4 容器的 `.m4a` 暂不支持。文件内容应与后缀一致，否则对应的 GStreamer parser 会解码失败。
 
 ## 基本使用
 
-查看 MP3 编码信息：
+查看音频编码信息：
 
 ```bash
 ./scripts/voiceprint.sh inspect data/private/query.mp3

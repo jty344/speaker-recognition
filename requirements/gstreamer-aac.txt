@@ -1,0 +1,3 @@
+# filename sha256 url
+gstreamer1.0-plugins-bad_1.20.3-0ubuntu1.1_amd64.deb 3e8e4b24f7ee296d273625e04215d1f8b78f177f2a682a544f26055bc70849aa https://archive.ubuntu.com/ubuntu/pool/universe/g/gst-plugins-bad1.0/gstreamer1.0-plugins-bad_1.20.3-0ubuntu1.1_amd64.deb
+libfaad2_2.10.0-2_amd64.deb 295e21257da74e30d2b70e57417991d391099fec8060aac1f570e331259e4faf https://archive.ubuntu.com/ubuntu/pool/universe/f/faad2/libfaad2_2.10.0-2_amd64.deb

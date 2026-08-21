@@ -18,6 +18,25 @@ GST_DISCOVERER = "gst-discoverer-1.0"
 _PROJECT_ROOT = Path(__file__).resolve().parents[2]
 _XDG_CACHE_HOME = _PROJECT_ROOT / ".cache" / "xdg"
 _GST_REGISTRY = _PROJECT_ROOT / ".cache" / "gstreamer" / "registry.bin"
+_GST_PLUGIN_DIR = _PROJECT_ROOT / ".runtime" / "gstreamer" / "plugins"
+_GST_LIBRARY_DIR = _PROJECT_ROOT / ".runtime" / "gstreamer" / "lib"
+_AUDIO_FORMATS = {
+    ".aac": "aac",
+    ".flac": "flac",
+    ".mp3": "mp3",
+    ".wav": "wav",
+}
+_AUDIO_PARSERS = {
+    "aac": "aacparse",
+    "flac": "flacparse",
+    "mp3": "mpegaudioparse",
+    "wav": "wavparse",
+}
+
+
+def _prepend_env_path(env: dict[str, str], name: str, path: Path) -> None:
+    current = env.get(name)
+    env[name] = str(path) if not current else f"{path}{os.pathsep}{current}"
 
 
 def _gstreamer_env() -> dict[str, str]:
@@ -26,6 +45,8 @@ def _gstreamer_env() -> dict[str, str]:
     env["GST_DEBUG_NO_COLOR"] = "1"
     env["XDG_CACHE_HOME"] = str(_XDG_CACHE_HOME)
     env["GST_REGISTRY"] = str(_GST_REGISTRY)
+    _prepend_env_path(env, "GST_PLUGIN_PATH_1_0", _GST_PLUGIN_DIR)
+    _prepend_env_path(env, "LD_LIBRARY_PATH", _GST_LIBRARY_DIR)
     return env
 
 
@@ -38,20 +59,39 @@ def _source_path(path: str | Path) -> Path | None:
     return None
 
 
+def detect_audio_format(path: str | Path) -> str | None:
+    """Return the normalized format selected from the final filename suffix."""
+    suffix = Path(path).suffix.lower()
+    audio_format = _AUDIO_FORMATS.get(suffix)
+    if audio_format is not None:
+        return audio_format
+
+    supported = ", ".join(sorted(_AUDIO_FORMATS))
+    LOGGER.error("不支持的音频文件后缀 %r；支持: %s", suffix or "<无后缀>", supported)
+    return None
+
+
 def decode_audio(path: str | Path, sample_rate: int = 16000) -> np.ndarray | None:
     """Decode an audio file into mono float32 PCM at ``sample_rate``."""
     source = _source_path(path)
     if source is None:
         return None
+    audio_format = detect_audio_format(path)
+    if audio_format is None:
+        return None
     if sample_rate <= 0:
         LOGGER.error("采样率必须大于 0: %s", sample_rate)
         return None
+
+    parser = _AUDIO_PARSERS[audio_format]
 
     command = [
         GST_LAUNCH,
         "-q",
         "filesrc",
         f"location={source}",
+        "!",
+        parser,
         "!",
         "decodebin",
         "!",
@@ -128,6 +168,9 @@ def inspect_audio(path: str | Path) -> dict[str, object] | None:
     source = _source_path(path)
     if source is None:
         return None
+    audio_format = detect_audio_format(path)
+    if audio_format is None:
+        return None
 
     command = [GST_DISCOVERER, "--timeout=10", "--verbose", str(source)]
     try:
@@ -161,6 +204,7 @@ def inspect_audio(path: str | Path) -> dict[str, object] | None:
         )
     return {
         "path": str(source),
+        "format": audio_format,
         "duration_seconds": _duration_seconds(duration),
         "codec": codec,
         "sample_rate": _match_int(r"^\s*Sample rate:\s*(\d+)", result.stdout),
